@@ -2,7 +2,7 @@ import java.util.Scanner;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
 
-public class ingredient {
+public class Ingredient {
     
     public static void main(String[] args) {
         String nameOfIngredient = "";
