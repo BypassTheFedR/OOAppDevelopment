@@ -1,4 +1,4 @@
-package steppingstones;
+package SteppingStones;
 
 import java.util.Scanner;
 import java.util.ArrayList;

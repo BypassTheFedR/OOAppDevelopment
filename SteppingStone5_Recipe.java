@@ -1,9 +1,8 @@
-package steppingstones;
+package SteppingStones;
  
 import java.util.Scanner;
 import javax.management.monitor.StringMonitor;
 import java.util.ArrayList;
-import steppingstones.Ingredient;
 
 public class SteppingStone5_Recipe {
     
@@ -12,7 +11,7 @@ public class SteppingStone5_Recipe {
     private int servings = 0;
     // Attempt to use Ingredient class - for final project
     // ArrayList<Ingredient> recipeIngredients = new ArrayList<Ingredient>();
-    private ArrayList<Ingredient> recipeIngredients = new ArrayList<Ingredient>();
+    private ArrayList<String> recipeIngredients = new ArrayList<String>();
     private int totalRecipeCalories = 0;
 
      // Sets the name of the recipe
@@ -36,12 +35,12 @@ public class SteppingStone5_Recipe {
      }
 
      // Sets the recipe ingredients
-     public void setRecipeIngredients (ArrayList<Ingredient> recipeIngredients) {
+     public void setRecipeIngredients (ArrayList<String> recipeIngredients) {
         this.recipeIngredients = recipeIngredients;
      }
 
      // Gets the recipe ingredients
-     public ArrayList<Ingredient> getRecipeIngredients () {
+     public ArrayList<String> getRecipeIngredients () {
         return recipeIngredients;
      }
     
@@ -49,7 +48,7 @@ public class SteppingStone5_Recipe {
     public SteppingStone5_Recipe() {
         this.recipeName = "";
         this.servings = 0; //<--- assignment value with appropriate data type
-        this.recipeIngredients = new ArrayList<Ingredient>(); //<-- assignment value for empty ArrayList
+        this.recipeIngredients = new ArrayList<String>(); //<-- assignment value for empty ArrayList
         this.totalRecipeCalories = 0;    
     }
 
@@ -78,7 +77,7 @@ public class SteppingStone5_Recipe {
     
      public SteppingStone5_Recipe createNewRecipe() {
         int totalRecipeCalories = 0;
-        ArrayList <Ingredient> recipeIngredients = new ArrayList<Ingredient>();
+        ArrayList <String> recipeIngredients = new ArrayList<String>();
         boolean addMoreIngredients = true;
 
         Scanner scnr = new Scanner(System.in);
