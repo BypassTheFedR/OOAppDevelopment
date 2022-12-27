@@ -1,8 +1,8 @@
 package SteppingStones;
 
 import java.util.ArrayList;
-import SteppingStones.SteppingStone5_Recipe;
-import SteppingStones.Ingredient;
+// import SteppingStones.SteppingStone5_Recipe;
+// import SteppingStones.Ingredient;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,8 +19,8 @@ public class SteppingStone5_RecipeTest {
 	public static void main(String[] args) {
 		// Create two recipe objects first
 		SteppingStone5_Recipe myFirstRecipe = new SteppingStone5_Recipe();
-		ArrayList<String> recipeIngredients = new ArrayList<String>(); 
-		ArrayList<String> recipeIngredientsTwo = new ArrayList<String>(); 
+		final ArrayList<Ingredient> recipeIngredients = new ArrayList<>(); 
+		ArrayList<Ingredient> recipeIngredientsTwo = new ArrayList<>(); 
 		String ingredientName = "Anchovies";
 		// String tempIngredient = new tempIngredient().addNewIngredient(ingredientName);
 		recipeIngredients.add(ingredientName);

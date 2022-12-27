@@ -5,18 +5,88 @@ import java.util.ArrayList;
 import java.util.InputMismatchException;
 
 public class Ingredient {
-    
-    public static void main(String[] args) {
-        String nameOfIngredient = "";
-        double ingredientAmount = -1.0;
-        String unitMeasurement = "";
-        int numberCaloriesPerUnit = -1;
-        double totalCalories = 0.0;
+    private String nameOfIngredient;
+    private double ingredientAmount;
+    private String unitMeasurement;
+    private double numberCaloriesPerUnit;
+    private double totalCalories;
+    /*
+     * set and get ingredient name
+     */
+    public void setIngredientName (String nameOfIngredient) {
+        this.nameOfIngredient = nameOfIngredient;         
+    } 
 
+    public String getIngredientName() {
+        return this.nameOfIngredient;
+    }
+
+    /*
+     * set and get ingredient amount
+     */
+    public void setIngredientAmount (double ingredientAmount) {
+        this.ingredientAmount = ingredientAmount;         
+    } 
+
+    public double getIngredientAmount() {
+        return this.ingredientAmount;
+    }
+
+    /*
+     * set and get unit of measurement
+     */
+    public void setUnitMeasurement (String unitMeasurement) {
+        this.unitMeasurement = unitMeasurement;         
+    } 
+
+    public String getUnitMeasurement() {
+        return this.unitMeasurement;
+    }
+
+    /*
+     * set and get number of calories per unit
+     */
+    public void setNumberCaloriesPerUnit (double numberCaloriesPerUnit) {
+        this.numberCaloriesPerUnit = numberCaloriesPerUnit;         
+    } 
+
+    public double getNumberCaloriesPerUnit() {
+        return this.numberCaloriesPerUnit;
+    }
+    /*
+     * Calculates the total calories for the ingredient and get method for total calories
+     */
+    public void calculateTotalCalories () {
+        this.totalCalories = this.numberCaloriesPerUnit * this.ingredientAmount;
+    }
+
+    public double getIngredientCalories () {
+        return this.totalCalories;
+    }
+
+    // constructor method
+    public Ingredient() {
+        this.nameOfIngredient = "";
+        this.ingredientAmount = -1.0;
+        this.unitMeasurement = "";
+        this.numberCaloriesPerUnit = -1;
+        this.totalCalories = 0.0;
+    }
+
+    public Ingredient(String nameOfIngredient, double ingredientAmount, String unitMeasurement, double numberCaloriesPerUnit, double totalCalories) {
+        this.nameOfIngredient = nameOfIngredient;
+        this.ingredientAmount = ingredientAmount;
+        this.unitMeasurement = unitMeasurement;
+        this.numberCaloriesPerUnit = numberCaloriesPerUnit;
+        this.totalCalories = ingredientAmount;
+    }
+
+    public Ingredient enterNewIngredient() {
+        
         Scanner scnr = new Scanner(System.in);
 
         // Asks the user for the name of the ingredient and stores it in nameOfIngredient
-        System.out.println("Please enter the name of the ingredient: ");
+        // System.out.println("Please enter the name of the ingredient: ");
         if (scnr.hasNext()) {
             nameOfIngredient = scnr.next();
         }
@@ -76,5 +146,7 @@ public class Ingredient {
         
         // Outputs the number of calories in the ingredient for the recipe
         System.out.println("The recipe uses " + ingredientAmount + " " + unitMeasurement + " of " + nameOfIngredient + " and has " + totalCalories + " calories.");
+        Ingredient ingredients = new Ingredient(nameOfIngredient, ingredientAmount, unitMeasurement, numberCaloriesPerUnit, totalCalories);
+        return ingredients;
     }
 }
