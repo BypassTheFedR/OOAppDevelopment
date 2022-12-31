@@ -8,7 +8,7 @@ public class SteppingStone5_Recipe {
     // initilize variables for recipe name, servings, ingredients, and total recipe calories.
     private String recipeName;
     private int servings;
-    private ArrayList<Ingredient> recipeIngredients;
+    private ArrayList<Ingredient> recipeIngredients = new ArrayList<>();
     private double totalRecipeCalories;
 
      // Sets the name of the recipe
@@ -91,7 +91,7 @@ public class SteppingStone5_Recipe {
     
      public SteppingStone5_Recipe createNewRecipe() {
         double totalRecipeCalories = 0;
-        ArrayList <Ingredient> recipeIngredients = new ArrayList<>();
+        ArrayList<Ingredient> recipeIngredients = new ArrayList<>();
         boolean addMoreIngredients = true;
         Scanner scnr = new Scanner(System.in);
         
@@ -100,7 +100,10 @@ public class SteppingStone5_Recipe {
         
         System.out.println("Please enter the number of servings: ");
         int servings = scnr.nextInt();
-               
+
+        recipeIngredients.enterNewIngredient();
+        
+        /* 
         do {
             System.out.println("Please enter the ingredient name or type end if you are finished entering ingredients: ");
             // clears the "\n" left from previous scnr object, allows inputting multiple words for ingredients
@@ -125,6 +128,7 @@ public class SteppingStone5_Recipe {
                 totalRecipeCalories = totalRecipeCalories + (ingredientCalories * ingredientAmount); 
                 */           
             }
+           
            
        } while (addMoreIngredients == true); {
         

@@ -19,8 +19,8 @@ public class SteppingStone5_RecipeTest {
 	public static void main(String[] args) {
 		// Create two recipe objects first
 		SteppingStone5_Recipe myFirstRecipe = new SteppingStone5_Recipe();
-		final ArrayList<Ingredient> recipeIngredients = new ArrayList<>(); 
-		ArrayList<Ingredient> recipeIngredientsTwo = new ArrayList<>(); 
+		ArrayList<Ingredient> recipeIngredients = new ArrayList<Ingredient>(); 
+		ArrayList<Ingredient> recipeIngredientsTwo = new ArrayList<Ingredient>(); 
 		String ingredientName = "Anchovies";
 		// String tempIngredient = new tempIngredient().addNewIngredient(ingredientName);
 		recipeIngredients.add(ingredientName);
