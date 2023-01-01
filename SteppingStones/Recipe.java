@@ -1,7 +1,6 @@
-import java.util.ArrayList;
-import java.util.Scanner;
+package SteppingStones;
 
-import SteppingStones.Ingredient;
+import java.util.Scanner;
 
 public class Recipe {
     /*
@@ -9,7 +8,7 @@ public class Recipe {
      */
     private String recipeName;
     private int servings;
-    private ArrayList<Ingredient> recipeIngredients = new ArrayList<>(); // retrieved from the Ingredients class
+    private Ingredient recipeIngredients = new Ingredient(); // retrieved from the Ingredients class
     private double totalRecipeCalories;
     
     public String getRecipeName() { // Get recipeName
@@ -28,11 +27,11 @@ public class Recipe {
         this.servings = servings;
     }
 
-    public ArrayList<Ingredient> getRecipeIngredients() { // Get recipe ingredients
+    public Ingredient getRecipeIngredients() { // Get recipe ingredients
         return recipeIngredients;    
     }
 
-    public void setRecipeIngredients(ArrayList<Ingredient> recipeIngredients) { // Sets the recipe ingredients
+    public void setRecipeIngredients(Ingredient recipeIngredients) { // Sets the recipe ingredients
         this.recipeIngredients = recipeIngredients;
 
         /*
@@ -55,11 +54,11 @@ public class Recipe {
     public Recipe() {
         recipeName = "";
         servings = 0;
-        recipeIngredients = new ArrayList<>();
+        Ingredient recipeIngredients = new Ingredient();
         totalRecipeCalories = 0.0; 
     }
     
-    public Recipe(String recipeName, int servings, ArrayList<Ingredient> recipeIngredients, double totalRecipeCalories) {
+    public Recipe(String recipeName, int servings, Ingredient recipeIngredients, double totalRecipeCalories) {
         this.recipeName = recipeName;
         this.servings = servings;
         this.recipeIngredients = recipeIngredients;
@@ -74,10 +73,12 @@ public class Recipe {
 
         System.out.println("How many servings does your recipe make?");
         setServings(scnr.nextInt()); // get user input for the number of servings
-        System.out.println(); // clears the '\n' after nextInt
+        // System.out.println(); // clears the '\n' after nextInt
 
-        ArrayList<Ingredient> recipeIngredients = new ArrayList<Ingredient>();
+        Ingredient recipeIngredients = new Ingredient().enterNewIngredient();
         recipeIngredients.enterNewIngredient();
+
+        // setTotalRecipeCalories(scnr.nextDouble());
 
         Recipe newRecipe = new Recipe(recipeName, servings, recipeIngredients, totalRecipeCalories);
         return newRecipe;
